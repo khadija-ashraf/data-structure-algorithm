@@ -30,11 +30,13 @@ class MyDequeImpl<T> implements MyDeque<T>{
 		if(head == null) {
 			head = current;
 			tail = current;
+			size++;
 			return data;
 		}
 		current.next = head;
 		head.prev = current;
 		head = current;
+		size++;
 		
 		return data;
 	}
@@ -45,12 +47,13 @@ class MyDequeImpl<T> implements MyDeque<T>{
 		if(tail == null) {
 			head = current;
 			tail = current;
+			size++;
 			return data;
 		}
 		tail.next = current;
 		current.prev = tail;
 		tail = current;
-		
+		size++;
 		return data;
 	}
 
@@ -103,7 +106,7 @@ class MyDequeImpl<T> implements MyDeque<T>{
 		} else {
 			head.prev = null;
 		}
-		
+		size--;
 		return removedData;
 	}
 
@@ -121,7 +124,7 @@ class MyDequeImpl<T> implements MyDeque<T>{
 		} else {
 			tail.next = null;
 		}
-		
+		size--;
 		return removedData;
 	}
 
@@ -152,6 +155,8 @@ class MyDequeImpl<T> implements MyDeque<T>{
 		} else {
 			head.prev = null;
 		}
+		size--;
+		
 		return polledData;
 	}
 
@@ -170,6 +175,7 @@ class MyDequeImpl<T> implements MyDeque<T>{
 			tail.next = null;
 		}
 				
+		size--;
 		return pollData;
 	}
 	
@@ -188,12 +194,15 @@ class MyDequeImpl<T> implements MyDeque<T>{
 		else {
 			tail.next = null;
 		}
-		
+		size--;
 		return popedData;
 	}
 	
+	public int size() {
+		return size;
+	}
 	public void printDequq() {
-		System.out.println("Printing the deque");
+		System.out.println("Printing the deque of size: "+size());
 		if (head == null) {
 			System.out.println("Dequq is empty.");
 		}

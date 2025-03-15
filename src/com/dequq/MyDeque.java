@@ -22,6 +22,10 @@ public interface MyDeque<T> {
 	public T pollTail();
 	
 	public T pop();
+	
+	public int size();
 
 	public void printDequq() ;
+	
+	
 }
