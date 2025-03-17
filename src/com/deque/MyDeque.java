@@ -1,4 +1,4 @@
-package com.dequq;
+package com.deque;
 
 // A custom Double Ended Queue (Deque) implementation:
 

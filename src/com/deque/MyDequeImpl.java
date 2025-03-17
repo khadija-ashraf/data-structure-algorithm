@@ -1,4 +1,4 @@
-package com.dequq;
+package com.deque;
 
 
 class Node<T>{
@@ -179,8 +179,6 @@ class MyDequeImpl<T> implements MyDeque<T>{
 		return pollData;
 	}
 	
-//	 1 <-2 -> 3 <- 4 -> 5 <- 6 ->null
-//							 T
 	public T pop() {
 		if(tail == null)
 			return null;
