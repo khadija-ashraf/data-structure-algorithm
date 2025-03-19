@@ -7,30 +7,30 @@ public class QuickSort {
 //	2. partition the array in left and right portions. The left part of the partition has
 //	all the elements smaller than the partition point. The right part of the partition 
 //	has all the elements grater than the partition point. 
-	
+//	
 //	the partition point is called the pivot element. After a partition completion the pivot
 //	element achieves its actual final position in the final answer.
 //	that means, after every partition we get at least one element sorted and positioned in the
 //	final sorted result. Therefore, the later partitions excludes the pivot element 
 //	cause its already sitting in the index where is suppose to be in the final sorted array.
-	 
+//	 
 //	We treat each left and right partition as a new input array and call quicksort on both of them 
 //	recursively.
-
-	
+//
+//	
 //	Concept behind the partition method:
 //	for every pivot element we scan the entire input array of its scope. during this scan our
 //	goal is to find any smaller elements than the pivot and place them to left side of the 
 //	input array. any left element that is not smaller than the pivot will leave its space gracefully 
 //	for a smaller (than pivot) element. Therefore, we can say, after a single scan
-//  all the elements smaller than the current pivot are to the left side of the input array. Then we
-//  place the pivot element right after those smaller elements. In this process 
+//	all the elements smaller than the current pivot are to the left side of the input array. Then we
+//	place the pivot element right after those smaller elements. In this process 
 //	we can not assert that all those smaller elements are sorted but we can say that the pivot element
 //	is the grater than all those small elements. and since we scanned the entire input array, so 
 //	it is intuitive that the pivot is sitting at the right position where it will be in the final 
 //	sorted array, because all the elements left to the pivot are smaller than it, 
 //	and obviously, all the elements right to the pivot must be grater than it.
-	
+//	
 //	This process run recursively in the left and right parts of the input array.
 	
 	public void sort(int[] arr, int lowIndex, int highIndex) {
